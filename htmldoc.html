@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="./htmldoc.css" rel="stylesheet" type="text/css" />
+  <title>Main page</title>
+</head>
+
+<body>
+  <h1>Барселона, Испания.</h1>
+
+  <div id="weather" class="weather"> </div>
+
+  <div class="mainimg">
+    <img src="https://espanarusa.com/files/autoupload/94/84/67/xllspuz5392644.jpg" alt="фото Барселоны" />
+  </div>
+  <div class="info">
+    <p>
+      Барселона — столица и крупнейший город Каталонии и второй по величине
+      город Испании с населением более 1,6 млн человек.
+    </p>
+    <p>
+      Это крупный культурный и экономический центр, известный своей
+      потрясающей архитектурой, в том числе работами Антонио Гауди, такими как
+      Саграда Фамилия, Парк Гуэль и Дом Бальо.
+    </p>
+    <p>
+      Барселона также известна своими пляжами, музеями и кулинарными изысками,
+      что делает ее популярным туристическим направлением.
+    </p>
+    <p>
+      На улицах столицы Каталонии легко можно встретить древние раритеты
+      римского прошлого, средневековые кварталы и соборы, скульптурные и
+      архитектурные шедевры модернизма и современности.
+    </p>
+    <h3>Панорама Барселоны</h3>
+  </div>
+  <div class="container">
+    <img src="https://barcelonatm.ru/wp-content/uploads/2017/05/panorama-barselony-2.jpg" alt="панорама 1" />
+    <img
+      src="https://thumbs.dreamstime.com/b/%D0%BF%D0%B0%D0%BD%D0%BE%D1%80%D0%B0%D0%BC%D0%B0-%D0%B1%D0%B0%D1%80%D1%81%D0%B5-%D0%BE%D0%BD%D1%8B-%D0%BD%D0%B0-%D0%B7%D0%B0%D1%85%D0%BE-%D0%B5-%D1%81%D0%BE-%D0%BD%D1%86%D0%B0-96659434.jpg"
+      alt="панорама 2" />
+    <img src="https://barcelonatm.ru/wp-content/uploads/2017/05/panorama-barselony-5.jpg" alt="панорама 3" />
+  </div>
+  <h1>Информация для туристов</h1>
+  <div class="wrappernav">
+    <img src="https://barcelona-home.com/blog/wp-content/upload/2022/04/Blog-Templates-7-2-955x508.png" alt="Attraction"
+      usemap="#image-map" />
+    <img src="https://barcelona-home.com/blog/wp-content/upload/2022/04/Blog-Templates-4-2-955x508.png"
+      alt="Restaurants" usemap="#image-map1" />
+    <img src="https://barcelona-home.com/blog/wp-content/upload/2022/03/Blog-Templates-2-3-955x508.png"
+      alt="Autumn period" usemap="#image-map2" />
+  </div>
+  <map name="image-map">
+    <area shape="rect" coords="160, 50,330,200" href="./htmldoc2.html" alt="Area 1" />
+    <map name="image-map1">
+      <area shape="rect" coords="160, 50,330,200" href="./htmldoc3.html" alt="Area 2" />
+      <map name="image-map2">
+        <area shape="rect" coords="160, 50,330,200" href="./htmldoc4.html" alt="Area 3" />
+      </map>
+
+      <div class="maket"></div>
+      <script>
+        const weatherBlock = document.getElementById("weather");
+
+        // делается запрос
+        fetch('https://63f50fdc55677ef68bc93a84.mockapi.io/api/weather/spain')
+          // данные из запроса преобразуется из стринги в json формат
+          .then((response) => response.json())
+          .then((data) => {
+            data.forEach(elem => {
+              // на каждый объект в массиве создаем HTML
+              const block = `
+                <div class="weather-wrapper">
+                  <span>${elem.day}</span>
+                  ${elem.sun ? '<img class="icon" src="./sun.svg" alt="sun">' : '<img class="icon" src="./cloudy.svg" alt="cloudy">'}
+                  <span>Температура: ${elem.temperature}</span>
+                  <span>Ветер: ${elem.wind}</span>
+                </div>
+              `;
+
+              weatherBlock.innerHTML += block;
+            });
+          }
+          );
+      </script>
+</body>
+
+</html>

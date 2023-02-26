@@ -1,0 +1,170 @@
+body {
+  background-color: #ffdab9;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.weather {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 15px 117px;
+}
+
+.weather-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 130px;
+  margin: 0px 3px;
+
+  align-items: center;
+  border-radius: 10px;
+  background-color: grey;
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  font-family: Courier New, monospace;
+}
+.mainimg {
+  width: 861px;
+  height: 579px;
+  margin: 0 auto 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+h3 {
+  text-align: center;
+}
+
+.info {
+  width: 50%;
+  margin: auto;
+  text-align: left;
+  font-size: 18px;
+  font-family: Courier New, monospace;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 0 0 30px;
+}
+
+.container IMG {
+  margin-right: 1.9%;
+  width: 30%;
+}
+
+.item {
+  width: 33.33%;
+  height: auto;
+}
+
+.mainphoto {
+  display: block;
+  margin: 20px auto;
+  width: 50%;
+}
+
+.navimg1 {
+  width: 29%;
+  height: auto;
+}
+
+.navimg2 {
+  width: 29%;
+  height: auto;
+}
+
+.navimg3 {
+  width: 29%;
+  height: auto;
+}
+
+.wrappernav {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 0 0 30px;
+}
+
+.wrappernav IMG {
+  border-radius: 111px;
+  margin-right: 1.9%;
+  width: 25%;
+}
+
+map {
+  display: inline;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+@media screen and (max-width: 900px) {
+  h1 {
+    font-size: 30px;
+  }
+  .mainimg {
+    width: 701px;
+    height: 421px;
+    margin-bottom: 10px;
+  }
+  .info {
+    width: 83%;
+  }
+  .wrappernav {
+    flex-direction: column;
+    align-items: center;
+  }
+  .wrappernav IMG {
+    width: 400px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  h1 {
+    font-size: 25px;
+  }
+  .mainimg {
+    width: 285px;
+    height: 234px;
+  }
+  .info {
+    width: 83%;
+  }
+  h2 {
+    font-size: 23px;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 0 5px;
+  }
+
+  .container IMG {
+    width: 90%;
+    margin-bottom: 14px;
+  }
+  .wrappernav {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 0 4px;
+  }
+  .wrappernav IMG {
+    width: 270px;
+    margin-bottom: 10px;
+  }
+}
